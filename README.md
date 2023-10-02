@@ -14,5 +14,5 @@ To get a quick start:
 
 ```bash
 cd codes/config/DIEM-SR/
-python3 test.py --opt options/test/test.yml
+python3 test.py --opt options/test/test_DIEM-SR.yml
 ```
