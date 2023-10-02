@@ -1,0 +1,54 @@
+#### general settings
+name: channel4_DIEM-SRGANmodel
+use_tb_logger: false
+model: DegSRModel
+scale: 4
+gpu_ids: [0]
+metrics: [best_psnr, best_ssim, lpips]
+
+#### datasets
+datasets:
+  test:
+    name: myDataset_twitter
+    mode: PairedDataset
+    data_type: lmdb
+    dataroot_tgt: ../../../data_samples/GT.lmdb
+    dataroot_src: ../../../data_samples/LR_twitterX4.lmdb
+  test2:
+    name: myDataset_test_wechat
+    mode: PairedDataset
+    data_type: lmdb
+    color: RGB
+    dataroot_tgt: ../../../data_samples/GT.lmdb
+    dataroot_src: ../../../data_samples/LR_wechatX4.lmdb
+  test3:
+    name: myDataset_test_weibo
+    mode: PairedDataset
+    data_type: lmdb
+    color: RGB
+    dataroot_tgt: ../../../data_samples/GT.lmdb
+    dataroot_src: ../../../data_samples/LR_weiboX4.lmdb
+#### network structures
+networks:
+  netD1:
+    which_network: PatchGANDiscriminator
+    setting:
+      in_c: 3
+      nf: 64
+      nb: 3
+      stride: 1
+    pretrain: 
+      path: ../../../checkpoints/channel4_EDSRGANmodel_netD1.pth
+      strict_load: true
+  netSR:
+    which_network: EDSR
+    setting:
+      nf: 64
+      nb: 16
+      res_scale: 1
+      upscale: 4
+    pretrain: 
+      path: ../../../checkpoints/channel4_EDSRGANmodel_netSR.pth
+      strict_load: false
+
+

@@ -1,0 +1,46 @@
+#### general settings
+name: channel3_SRmodel_twitter
+use_tb_logger: false
+model: DegSRModel_channel3
+scale: 4
+gpu_ids: [0]
+metrics: [best_psnr, best_ssim, lpips]
+# metrics: [niqe, piqe, brisque] 
+
+#### datasets
+datasets:
+  test:
+    name: myDataset
+    mode: PairedDataset
+    data_type: lmdb
+    dataroot_tgt: ../../../data_samples/GT.lmdb
+    dataroot_src: ../../../data_samples/LR_twitterX4.lmdb
+  test2:
+    name: myDataset_test_wechat
+    mode: PairedDataset
+    data_type: lmdb
+    color: RGB
+    dataroot_tgt: ../../../data_samples/GT.lmdb
+    dataroot_src: ../../../data_samples/LR_wechatX4.lmdb
+  test3:
+    name: myDataset_test_weibo
+    mode: PairedDataset
+    data_type: lmdb
+    color: RGB
+    dataroot_tgt: ../../../data_samples/GT.lmdb
+    dataroot_src: ../../../data_samples/LR_weiboX4.lmdb
+
+#### network structures
+networks:
+  netSR:
+    which_network: EDSR_channel3
+    setting:
+      nf: 64
+      nb: 16
+      res_scale: 1
+      upscale: 4
+    pretrain: 
+      path: ../../../checkpoints/channel3_SRmodel_netSR.pth
+      strict_load: true
+
+
