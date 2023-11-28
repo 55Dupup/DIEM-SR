@@ -1,4 +1,18 @@
 # DIEM-SR
+This is an offical implementation of the TCSVT2023's paper [Dynamic Degradation Intensity Estimation for Adaptive Blind Super-Resolution: A Novel Approach and Benchmark Dataset](10.1109/TCSVT.2023.3331883).
+
+If you find this repo useful for your work, please cite our paper:
+```
+@ARTICLE{10314558,
+  author={Chen, Guang-Yong and Weng, Wu-Ding and Su, Jian-Nan and Gan, Min and Chen, C. L. Philip},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+  title={Dynamic Degradation Intensity Estimation for Adaptive Blind Super-Resolution: A Novel Approach and Benchmark Dataset}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TCSVT.2023.3331883}}
+```
 
 The codes are built on the basis of [BasicSR](https://github.com/xinntao/BasicSR).
 
