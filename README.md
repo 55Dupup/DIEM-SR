@@ -1,5 +1,5 @@
 # DIEM-SR
-This is an offical implementation of the TCSVT2023's paper [Dynamic Degradation Intensity Estimation for Adaptive Blind Super-Resolution: A Novel Approach and Benchmark Dataset](10.1109/TCSVT.2023.3331883).
+This is an offical implementation of the TCSVT2023's paper [Dynamic Degradation Intensity Estimation for Adaptive Blind Super-Resolution: A Novel Approach and Benchmark Dataset](https://ieeexplore.ieee.org/document/10314558).
 
 If you find this repo useful for your work, please cite our paper:
 ```
