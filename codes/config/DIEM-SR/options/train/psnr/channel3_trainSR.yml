@@ -104,16 +104,16 @@ train:
   
   losses:
   
-    lr_adv:
-      type: GANLoss
-      gan_type: lsgan
-      real_label_val: 1.0
-      fake_label_val: 0.0
-      weight: !!float 1.0
+    # lr_adv:
+    #   type: GANLoss
+    #   gan_type: lsgan
+    #   real_label_val: 1.0
+    #   fake_label_val: 0.0
+    #   weight: !!float 1.0
     
-    noise_mean:
-      type: MSELoss
-      weight: 100.0
+    # noise_mean:
+    #   type: MSELoss
+    #   weight: 100.0
     sr_pix_sr: 
       type: L1Loss
       weight: 1.0
